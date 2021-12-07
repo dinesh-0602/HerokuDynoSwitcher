@@ -33,7 +33,8 @@ You need to deploy two similar apps to two heroku accounts and only enable the d
 - `FIRST_B_APIKEY` is the API key of the heroku account your secondary app is in. Check it in your heroku settings, in the last of the page.<br>
 
 <b>Optional Variables</b> <br>
-The script supports up to 5 pair of apps simultaneously. You may add these vars if you need it.<br>
+- `SWITCH_DELAY` is for delay before switching the dyno to another app. Some apps need time to close all the connections they have when turning off dyno, like web server, etc. If blank, it will set to `10`.
+- The script supports up to 5 pair of apps simultaneously. You may add these vars if you need it.<br>
 `SECOND_PROCESSTYPE`, `SECOND_A_APPNAME`, `SECOND_A_APIKEY`, `SECOND_B_APPNAME`, `SECOND_B_APIKEY`<br>
 `THIRD_PROCESSTYPE`, `THIRD_A_APPNAME`, `THIRD_A_APIKEY`, `THIRD_B_APPNAME`, `THIRD_B_APIKEY`<br>
 `FOURTH_PROCESSTYPE`, `FOURTH_A_APPNAME`, `FOURTH_A_APIKEY`, `FOURTH_B_APPNAME`, `FOURTH_B_APIKEY`<br>
