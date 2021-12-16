@@ -4,11 +4,12 @@
 
 FROM python:3.9-slim
 
-RUN mkdir app \
-    && chmod 777 app
-COPY . /app
 WORKDIR /app
+RUN chmod 777 /app
 
+COPY requirements.txt requirements.txt
 RUN pip3 install -r requirements.txt
 
-CMD ["python3", "script.py"]
+COPY . .
+
+CMD [ "python3", "script.py"]
